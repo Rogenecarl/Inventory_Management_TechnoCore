@@ -125,10 +125,10 @@ body.dark-theme {
   column-gap: .25rem;
 }
 
-.header__logo i {
+/* .header__logo i {
   font-size: 1.5rem;
   color: var(--first-color);
-}
+} */
 
 .header__logo span {
   color: var(--title-color);
@@ -139,6 +139,11 @@ body.dark-theme {
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
+}
+
+.header__logo img {
+  width: 1.5rem;
+  height: 1.5rem; 
 }
 
 /*=============== SIDEBAR ===============*/
@@ -181,7 +186,7 @@ body.dark-theme {
   position: relative;
   width: 50px;
   height: 50px;
-  background-color: var(--first-color);
+  background-color: var(--shadow-color);
   border-radius: 50%;
   overflow: hidden;
   display: grid;
@@ -190,8 +195,7 @@ body.dark-theme {
 
 .sidebar__img img {
   position: absolute;
-  width: 36px;
-  bottom: -1px;
+  /* width: 36px; */
 }
 
 .sidebar__info h3 {
