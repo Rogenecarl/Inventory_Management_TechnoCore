@@ -4,6 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
+  --maincontent-height: 3.5rem;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -11,14 +12,14 @@
   --title-color: hsl(228, 18%, 16%);
   --text-color: hsl(228, 8%, 56%);
   --body-color: hsl(228, 100%, 99%);
-  --shadow-color: hsla(228, 80%, 4%, .1);
+  --shadow-color: hsla(228, 80%, 4%, 0.1);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Nunito Sans", system-ui;
-  --normal-font-size: .938rem;
-  --smaller-font-size: .75rem;
-  --tiny-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -33,7 +34,7 @@
 @media screen and (min-width: 1150px) {
   :root {
     --normal-font-size: 1rem;
-    --smaller-font-size: .813rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -49,7 +50,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
 
 a {
@@ -72,7 +73,7 @@ body.dark-theme {
   --title-color: hsl(228, 18%, 96%);
   --text-color: hsl(228, 12%, 61%);
   --body-color: hsl(228, 24%, 16%);
-  --shadow-color: hsla(228, 80%, 4%, .3);
+  --shadow-color: hsla(228, 80%, 4%, 0.3);
 }
 
 /*========== 
@@ -90,6 +91,7 @@ body.dark-theme {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   margin-inline: 1.5rem;
+  overflow: hidden;
 }
 
 .main {
@@ -103,7 +105,7 @@ body.dark-theme {
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  margin: .75rem;
+  margin: 0.75rem;
 }
 
 .header__container {
@@ -116,13 +118,13 @@ body.dark-theme {
   align-items: center;
   padding-inline: 1.5rem;
   border-radius: 1rem;
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
 
 .header__logo {
   display: inline-flex;
   align-items: center;
-  column-gap: .25rem;
+  column-gap: 0.25rem;
 }
 
 /* .header__logo i {
@@ -143,7 +145,7 @@ body.dark-theme {
 
 .header__logo img {
   width: 1.5rem;
-  height: 1.5rem; 
+  height: 1.5rem;
 }
 
 /*=============== SIDEBAR ===============*/
@@ -157,12 +159,12 @@ body.dark-theme {
   background-color: var(--body-color);
   box-shadow: 2px 0 24px var(--shadow-color);
   padding-block: 1.5rem;
-  margin: .75rem;
+  margin: 0.75rem;
   border-radius: 1rem;
-  transition: left .4s, background-color .4s, width .4s;
+  transition: left 0.4s, background-color 0.4s, width 0.4s;
 }
 
-.sidebar__container, 
+.sidebar__container,
 .sidebar__content {
   display: flex;
   flex-direction: column;
@@ -201,7 +203,7 @@ body.dark-theme {
 .sidebar__info h3 {
   font-size: var(--normal-font-size);
   color: var(--title-color);
-  transition: color .4s;
+  transition: color 0.4s;
 }
 
 .sidebar__info span {
@@ -213,7 +215,7 @@ body.dark-theme {
 }
 
 .sidebar__content::-webkit-scrollbar {
-  width: .4rem;
+  width: 0.4rem;
   background-color: hsl(228, 8%, 85%);
 }
 
@@ -229,7 +231,7 @@ body.dark-theme {
   margin-bottom: 1.5rem;
 }
 
-.sidebar__list, 
+.sidebar__list,
 .sidebar__actions {
   display: grid;
   row-gap: 1.5rem;
@@ -243,7 +245,7 @@ body.dark-theme {
   column-gap: 1rem;
   color: var(--text-color);
   padding-left: 2rem;
-  transition: color .4s, opacity .4s;
+  transition: color 0.4s, opacity 0.4s;
 }
 
 .sidebar__link i {
@@ -305,16 +307,16 @@ body.dark-theme {
   .sidebar {
     width: max-content;
   }
-  .sidebar__info, 
+  .sidebar__info,
   .sidebar__link span {
     display: none;
   }
-  .sidebar__user, 
-  .sidebar__list, 
+  .sidebar__user,
+  .sidebar__list,
   .sidebar__actions {
     justify-content: center;
   }
-  .sidebar__user, 
+  .sidebar__user,
   .sidebar__link {
     grid-template-columns: max-content;
   }
@@ -325,7 +327,7 @@ body.dark-theme {
     padding-inline: 2rem;
   }
   .sidebar__title {
-    padding-inline: .5rem;
+    padding-inline: 0.5rem;
     margin-inline: auto;
   }
 }
@@ -335,10 +337,10 @@ body.dark-theme {
   .header {
     margin: 1rem;
     padding-left: 265px;
-    transition: padding .4s;
+    transition: padding 0.4s;
   }
   .header__container {
-    height: calc(var(--header-height) + .5rem);
+    height: calc(var(--header-height) + 0.5rem);
     padding-inline: 2rem;
   }
   .header__logo {
@@ -350,13 +352,13 @@ body.dark-theme {
     width: 250px;
     margin: 1rem;
   }
-  .sidebar__info, 
+  .sidebar__info,
   .sidebar__link span {
-    transition: opacity .4s;
+    transition: opacity 0.4s;
   }
-  .sidebar__user, 
+  .sidebar__user,
   .sidebar__title {
-    transition: padding .4s;
+    transition: padding 0.4s;
   }
 
   /* Reduce sidebar */
@@ -370,20 +372,279 @@ body.dark-theme {
     padding-left: 0;
     margin-inline: auto;
   }
-  .show-sidebar .sidebar__info, 
+  .show-sidebar .sidebar__info,
   .show-sidebar .sidebar__link span {
     opacity: 0;
   }
 
   .main {
     padding-left: 265px;
-    padding-top: 5.5rem;
-    transition: padding .4s;
+    padding-top: 5.8rem;
+    transition: padding 0.4s;
   }
 
   /* Add padding left */
   .left-pd {
     padding-left: 105px;
   }
-  
+}
+
+/*=============== Main content ===============*/
+
+.main__container {
+  width: 100%;
+  height: 80.5vh;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #eee;
+  padding: 20px;
+  border-radius: 1rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.main__container::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for Chrome and Safari */
+}
+
+/* Search and Create Button Container */
+.search-create-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow wrap for smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  /* Small gap between elements */
+  margin-bottom: 15px;
+}
+
+#searchInput {
+  flex: 1;
+  /* Flexibly grow in width */
+  min-width: 60%;
+  /* Minimum width to fit small screens */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.createbtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.createbtn:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto;
+  /* Horizontal scroll for small screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: center; /* Center text for both headers and data cells */
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 16px;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Button Container to align buttons */
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Align them vertically */
+}
+
+/* Button Styling for Actions (with icons) */
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Style for icons inside the buttons */
+.edit-btn i,
+.delete-btn i {
+  font-size: 18px;
+}
+
+/* Optional: To ensure buttons are the same size */
+.edit-btn,
+.delete-btn {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  th,
+  td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .createbtn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  #searchInput {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Modal Styles */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed to the screen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width */
+  height: 100%; /* Cover the entire height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Place it on top of other content */
+  justify-content: center; /* Center the content */
+  align-items: center; /* Center the content */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 5px;
+  width: 28%; /* Adjust width as necessary */
+  max-height: 90%; /* Limit height */
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+/* Close button styles */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input,
+form select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Toast message styling */
+.toast {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #4caf50; /* Success color */
+  color: white;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }

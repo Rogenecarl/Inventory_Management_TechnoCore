@@ -66,45 +66,74 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
-const ctx1 = document.getElementById("analyticsChart1").getContext("2d");
-const ctx2 = document.getElementById("analyticsChart2").getContext("2d");
+// for search usermanagementjs
+function searchUsers() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const table = document.getElementById("usersTable");
+  const rows = table.getElementsByTagName("tr");
 
-// var ctx1 = document.getElementById('myChart1').getContext('2d');
- new Chart(ctx1, {
-  type: "pie",
-  data: {
-    labels: ["Strings", "Percussion", "Wind Instruments"],
-    datasets: [
-      {
-        data: [10, 5, 15],
-        backgroundColor: ["#ff6384", "#36a2eb", "#cc65fe"], 
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    height: 200 // Set the height of the chart
+  for (let i = 1; i < rows.length; i++) {
+    let cells = rows[i].getElementsByTagName("td");
+    let match = false;
+    for (let j = 0; j < cells.length; j++) {
+      if (cells[j].textContent.toLowerCase().includes(input)) {
+        match = true;
+        break;
+      }
+    }
+    rows[i].style.display = match ? "" : "none";
   }
-});
+}
 
-new Chart(ctx2, {
-  type: "bar",
-  data: {
-    labels: ["Guitar", "Piano", "Drum", "Flute"],
-    datasets: [
-      {
-        label: "Stock Levels",
-        data: [10, 5, 8, 12],
-        backgroundColor: ["#ff9f40", "#ffcd56", "#4bc0c0", "#9966ff"],
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-    },
-  },
-});
+//modal for create account usermanagement.php
+
+// Open the Create Account Modal
+function openCreateAccountModal() {
+  document.getElementById("createAccountModal").style.display = "block";
+}
+
+// Close the Create Account Modal
+function closeCreateAccountModal() {
+  document.getElementById("createAccountModal").style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == document.getElementById("createAccountModal")) {
+    closeCreateAccountModal();
+  }
+};
+
+// Function to open the edit modal and populate it with user data
+function editUser(userId) {
+  // Fetch user data via an AJAX request
+  fetch("get_user_data.php?user_id=" + userId)
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("editUserId").value = data.user_id;
+      document.getElementById("editUsername").value = data.username;
+      document.getElementById("editEmail").value = data.email;
+      document.getElementById("editRole").value = data.role;
+      document.getElementById("editPassword").value = ""; // Reset password field
+      document.getElementById("editModal").style.display = "block";
+    });
+}
+
+// Function to open the delete modal
+function deleteUser(userId) {
+  document.getElementById("deleteUserId").value = userId;
+  document.getElementById("deleteModal").style.display = "block";
+}
+
+// Function to close any modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// Close the modal if the user clicks on the background
+window.onclick = function (event) {
+  if (event.target.className == "modal") {
+    closeModal("editModal");
+    closeModal("deleteModal");
+  }
+};

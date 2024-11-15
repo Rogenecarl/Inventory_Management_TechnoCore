@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Inventory Management</title>
   </head>
   <body>
@@ -56,12 +57,17 @@
 
               <a href="#" class="sidebar__link">
                 <i class="ri-git-repository-fill"></i>
-                <span>Role Management</span>
+                <span>Inventory</span>
               </a>
 
               <a href="#" class="sidebar__link">
                 <i class="ri-bar-chart-fill"></i>
-                <span>Inventory</span>
+                <span>Category</span>
+              </a>
+
+              <a href="#" class="sidebar__link">
+                <i class="ri-file-list-2-fill"></i>
+                <span>Supplier</span>
               </a>
 
               <a href="#" class="sidebar__link">
@@ -70,53 +76,6 @@
               </a>
             </div>
           </div>
-
-          <!-- Inventory Management Section -->
-          <!-- <div>
-               <h3 class="sidebar__title">INVENTORY</h3>
-               <div class="sidebar__list">
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-inbox-fill"></i>
-                     <span>Product List</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-add-box-fill"></i>
-                     <span>Add New Product</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-exchange-fill"></i>
-                     <span>Manage Stock</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-folder-history-fill"></i>
-                     <span>Inventory History</span>
-                  </a>
-               </div>
-            </div> -->
-
-          <!-- Reporting Section -->
-          <!-- <div>
-               <h3 class="sidebar__title">REPORTS</h3>
-               <div class="sidebar__list">
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-file-list-2-fill"></i>
-                     <span>Sales Reports</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-bar-chart-fill"></i>
-                     <span>Inventory Reports</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-history-line"></i>
-                     <span>Transaction Logs</span>
-                  </a>
-               </div>
-            </div> -->
 
           <!-- Settings and Configuration Section -->
           <div>
@@ -155,118 +114,32 @@
 
     <!--=============== MAIN ===============-->
     <main class="main container" id="main">
-      <h1>Dashboard</h1>
-      <div class="main-content">
-        <!-- Dashboard Cards -->
+      <h1 class="dash-fix">Dashboard</h1>
+      <div class="main__container">
+
         <div class="dashboard-cards">
           <div class="card total-users">
-            <h3>Total Products</h3>
+            <h3>Users</h3>
             <p>100</p>
           </div>
           <div class="card total-products">
-            <h3>Categories</h3>
+            <h3>Products</h3>
             <p>15</p>
+          </div>
+          <div class="card total-categories">
+            <h3>Categories</h3>
+            <p>5</p>
           </div>
           <div class="card low-stock">
             <h3>Low Stock Items</h3>
             <p>20</p>
           </div>
-          <div class="card total-categories">
-            <h3>New Added Items</h3>
-            <p>5</p>
-          </div>
-          <div class="card total-users">
-            <h3>Total Users</h3>
+          <div class="card added-items">
+            <h3>New Added Itmes</h3>
             <p>12</p>
           </div>
         </div>
 
-        <!-- Charts Section -->
-        <div class="charts-section">
-          <div class="chart-container">
-            <canvas id="productMovementChart"></canvas>
-          </div>
-          <div class="chart-container">
-            <canvas id="stockValueChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Responsive Table -->
-        <div class="table-section">
-          <h3>Product List</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Category</th>
-                <th>Stock Level</th>
-                <th>Reorder Level</th>
-                <th>Unit Price</th>
-                <th>Total Value</th>
-                <th>Last Updated</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>001</td>
-                <td>Guitar</td>
-                <td>String Instruments</td>
-                <td>15</td>
-                <td>5</td>
-                <td>$120</td>
-                <td>$1,800</td>
-                <td>2024-11-05</td>
-                <td><button>Edit</button><button>Delete</button></td>
-              </tr>
-              <tr>
-                <td>002</td>
-                <td>Piano</td>
-                <td>Keyboard</td>
-                <td>8</td>
-                <td>3</td>
-                <td>$500</td>
-                <td>$4,000</td>
-                <td>2024-11-06</td>
-                <td><button>Edit</button><button>Delete</button></td>
-              </tr>
-              <tr>
-                <td>003</td>
-                <td>Drum Kit</td>
-                <td>Percussion</td>
-                <td>5</td>
-                <td>2</td>
-                <td>$800</td>
-                <td>$4,000</td>
-                <td>2024-11-07</td>
-                <td><button>Edit</button><button>Delete</button></td>
-              </tr>
-              <tr>
-                <td>004</td>
-                <td>Flute</td>
-                <td>Wind Instruments</td>
-                <td>30</td>
-                <td>10</td>
-                <td>$150</td>
-                <td>$4,500</td>
-                <td>2024-11-04</td>
-                <td><button>Edit</button><button>Delete</button></td>
-              </tr>
-              <tr>
-                <td>005</td>
-                <td>Violin</td>
-                <td>String Instruments</td>
-                <td>10</td>
-                <td>3</td>
-                <td>$200</td>
-                <td>$2,000</td>
-                <td>2024-11-03</td>
-                <td><button>Edit</button><button>Delete</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </main>
 

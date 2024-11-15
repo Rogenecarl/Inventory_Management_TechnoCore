@@ -112,8 +112,120 @@
 
       <!--=============== MAIN ===============-->
       <main class="main container" id="main">
-         <h1>Sidebar Menu</h1>
-      </main>
+         <h1 class="dash-fix">Dashboard</h1>
+         <div class="main-content">
+           <!-- Dashboard Cards -->
+           <div class="dashboard-cards">
+             <div class="card total-users">
+               <h3>Users</h3>
+               <p>100</p>
+             </div>
+             <div class="card total-products">
+               <h3>Products</h3>
+               <p>15</p>
+             </div>
+             <div class="card total-categories">
+               <h3>Categories</h3>
+               <p>5</p>
+             </div>
+             <div class="card low-stock">
+               <h3>Low Stock Items</h3>
+               <p>20</p>
+             </div>
+             <div class="card added-items">
+               <h3>New Added Itmes</h3>
+               <p>12</p>
+             </div>
+           </div>
+   
+           <!-- Charts Section -->
+           <div class="charts-section">
+             <div class="chart-container">
+               <canvas id="productMovementChart" width="200" height="100">
+             </div>
+             <div class="chart-container">
+               <canvas id="stockValueChart" width="200" height="200">
+             </div>
+           </div>
+   
+           <!-- Responsive Table -->
+           <div class="table-section">
+             <h3>Product List</h3>
+             <table>
+               <thead>
+                 <tr>
+                   <th>Product ID</th>
+                   <th>Product Name</th>
+                   <th>Category</th>
+                   <th>Stock Level</th>
+                   <th>Reorder Level</th>
+                   <th>Unit Price</th>
+                   <th>Total Value</th>
+                   <th>Last Updated</th>
+                   <th>Actions</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <td>001</td>
+                   <td>Guitar</td>
+                   <td>String Instruments</td>
+                   <td>15</td>
+                   <td>5</td>
+                   <td>$120</td>
+                   <td>$1,800</td>
+                   <td>2024-11-05</td>
+                   <td><button>Edit</button><button>Delete</button></td>
+                 </tr>
+                 <tr>
+                   <td>002</td>
+                   <td>Piano</td>
+                   <td>Keyboard</td>
+                   <td>8</td>
+                   <td>3</td>
+                   <td>$500</td>
+                   <td>$4,000</td>
+                   <td>2024-11-06</td>
+                   <td><button>Edit</button><button>Delete</button></td>
+                 </tr>
+                 <tr>
+                   <td>003</td>
+                   <td>Drum Kit</td>
+                   <td>Percussion</td>
+                   <td>5</td>
+                   <td>2</td>
+                   <td>$800</td>
+                   <td>$4,000</td>
+                   <td>2024-11-07</td>
+                   <td><button>Edit</button><button>Delete</button></td>
+                 </tr>
+                 <tr>
+                   <td>004</td>
+                   <td>Flute</td>
+                   <td>Wind Instruments</td>
+                   <td>30</td>
+                   <td>10</td>
+                   <td>$150</td>
+                   <td>$4,500</td>
+                   <td>2024-11-04</td>
+                   <td><button>Edit</button><button>Delete</button></td>
+                 </tr>
+                 <tr>
+                   <td>005</td>
+                   <td>Violin</td>
+                   <td>String Instruments</td>
+                   <td>10</td>
+                   <td>3</td>
+                   <td>$200</td>
+                   <td>$2,000</td>
+                   <td>2024-11-03</td>
+                   <td><button>Edit</button><button>Delete</button></td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </main>
       
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>

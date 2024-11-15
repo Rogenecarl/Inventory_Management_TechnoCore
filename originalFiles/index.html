@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Inventory Management</title>
   </head>
   <body>
@@ -44,24 +45,29 @@
           <div>
             <h3 class="sidebar__title">MANAGE</h3>
             <div class="sidebar__list">
-              <a href="index.html" class="sidebar__link">
+              <a href="#" class="sidebar__link active-link">
                 <i class="ri-dashboard-line"></i>
                 <span>Dashboard</span>
               </a>
 
-              <a href="#" class="sidebar__link active-link">
+              <a href="usermanagement.html" class="sidebar__link">
                 <i class="ri-user-settings-fill"></i>
                 <span>User Management</span>
               </a>
 
               <a href="#" class="sidebar__link">
                 <i class="ri-git-repository-fill"></i>
-                <span>Role Management</span>
+                <span>Inventory</span>
               </a>
 
               <a href="#" class="sidebar__link">
                 <i class="ri-bar-chart-fill"></i>
-                <span>Inventory</span>
+                <span>Category</span>
+              </a>
+
+              <a href="#" class="sidebar__link">
+                <i class="ri-file-list-2-fill"></i>
+                <span>Supplier</span>
               </a>
 
               <a href="#" class="sidebar__link">
@@ -70,53 +76,6 @@
               </a>
             </div>
           </div>
-
-          <!-- Inventory Management Section -->
-          <!-- <div>
-               <h3 class="sidebar__title">INVENTORY</h3>
-               <div class="sidebar__list">
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-inbox-fill"></i>
-                     <span>Product List</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-add-box-fill"></i>
-                     <span>Add New Product</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-exchange-fill"></i>
-                     <span>Manage Stock</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-folder-history-fill"></i>
-                     <span>Inventory History</span>
-                  </a>
-               </div>
-            </div> -->
-
-          <!-- Reporting Section -->
-          <!-- <div>
-               <h3 class="sidebar__title">REPORTS</h3>
-               <div class="sidebar__list">
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-file-list-2-fill"></i>
-                     <span>Sales Reports</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-bar-chart-fill"></i>
-                     <span>Inventory Reports</span>
-                  </a>
-
-                  <a href="#" class="sidebar__link">
-                     <i class="ri-history-line"></i>
-                     <span>Transaction Logs</span>
-                  </a>
-               </div>
-            </div> -->
 
           <!-- Settings and Configuration Section -->
           <div>
@@ -155,7 +114,33 @@
 
     <!--=============== MAIN ===============-->
     <main class="main container" id="main">
-      <h1>Dashboard</h1>
+      <h1 class="dash-fix">Dashboard</h1>
+      <div class="main__container">
+
+        <div class="dashboard-cards">
+          <div class="card total-users">
+            <h3>Users</h3>
+            <p>100</p>
+          </div>
+          <div class="card total-products">
+            <h3>Products</h3>
+            <p>15</p>
+          </div>
+          <div class="card total-categories">
+            <h3>Categories</h3>
+            <p>5</p>
+          </div>
+          <div class="card low-stock">
+            <h3>Low Stock Items</h3>
+            <p>20</p>
+          </div>
+          <div class="card added-items">
+            <h3>New Added Itmes</h3>
+            <p>12</p>
+          </div>
+        </div>
+
+      </div>
     </main>
 
     <!--=============== MAIN JS ===============-->
